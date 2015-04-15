@@ -1,6 +1,8 @@
 #include <string>
 #include <exception>
 #include <iostream>
+#include "ptsim.h"
+#include "Page_table.h"
 
 int main(int argc, char **argv) {
     if (argc != 3) {
@@ -11,7 +13,7 @@ int main(int argc, char **argv) {
     unsigned int frames;
     try {
         frames = std::stoi(argv[1]);
-    } catch (exception &e) {
+    } catch (std::exception &e) {
         std::cerr << "Bad arg: " << argv[1] << std::endl << e.what() << std::endl;
         return 1;
     }

@@ -1,6 +1,6 @@
 #include "ptsim.h"
 
-void PTSim::add_pt(Page_table p, std::string name) {
+void PTSim::add_pt(Page_table &p, std::string name) {
     tables.push_back(pt_wrapper {&p, name, 0, 0});
 }
 
@@ -44,9 +44,9 @@ void PTSim::simulate(std::string file) {
 }
 
 
-void PTSim::print(void) {
+void PTSim::print(void) const {
     std::cout << "Page Fault Rates:\n";
     for (auto p: tables) {
-        std::cout << p.name << ": " << ((double)p.faults)/p.accesses << "%\n";
+        std::cout << p.name << ": " << static_cast<double>(p.faults)/p.accesses << "%\n";
     }
 }

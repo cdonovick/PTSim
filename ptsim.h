@@ -12,7 +12,7 @@ public:
     /*
      * Add pagetable to simulate
      */
-    void add_pt(Page_table p, std::string name);
+    void add_pt(Page_table &p, std::string name);
     
     /*
      * Read input file and simulate on page tables
@@ -22,7 +22,7 @@ public:
     /*
      * Print the statistics from the most recent run
      */
-    void print(void);
+    void print(void) const;
 private:
     struct pt_wrapper {
         Page_table *self;
