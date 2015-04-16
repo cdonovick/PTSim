@@ -2,13 +2,13 @@
 #define PAGE_TABLE_H
 
 #include<utility>
-#include<unordered_set>
+#include<unordered_map>
+
 typedef int PID;
 typedef int VPN;
 
 class Page_table{
     public:
-        Page_table();
         /*
          * Should return  1 for fault
          *                0 for in memory
@@ -19,4 +19,4 @@ class Page_table{
         virtual void terminate(PID) = 0;
 };
 
-#endif
+#endif //FDSJKFNSD
