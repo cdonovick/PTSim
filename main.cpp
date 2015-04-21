@@ -4,6 +4,9 @@
 #include "ptsim.h"
 #include "pagetable.h"
 #include "dumbtable.h"
+#include "fifotable.h"
+#include "lrutable.h"
+#include "randomtable.h"
 
 int main(int argc, char **argv) {
     if (argc != 3) {
@@ -20,9 +23,15 @@ int main(int argc, char **argv) {
     }
     PTSim sim;
     DumbTable d(frames);
+    FIFOTable f(frames);
+    LRUTable l(frames);
+    RandomTable r(frames);
+
     sim.add_pt(d, "No replacement");
-
-
+    sim.add_pt(f, "FIFO");
+    sim.add_pt(l, "LRU");
+    sim.add_pt(r, "Random");
+    
     sim.simulate(argv[2]);
     sim.print();
 

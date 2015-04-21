@@ -1,5 +1,5 @@
 #include "dumbtable.h"
-#include <cassert>
+
 DumbTable::DumbTable(size_t maxPages) : maxPages(maxPages) {}
 
 char DumbTable::reference(PID_t pid, VPN_t vpn) {
