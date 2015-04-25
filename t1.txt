@@ -1,0 +1,5 @@
+Page Fault Rates:
+No replacement: 0.739971%
+FIFO: 0.739971%
+LRU: 0.739971%
+Random: 0.739971%
